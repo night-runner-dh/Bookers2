@@ -1,5 +1,6 @@
 <% @books.each do |book| %>
   <div>
+ <spam> <%=link_to "show", book_path(book.id) %></span>
     <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
     <p>Title：<%= book.title %></p>
     <p>Opinion：<%= book.body %></p>
