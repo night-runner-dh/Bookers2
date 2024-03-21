@@ -13,11 +13,12 @@
 
   <body>
   <header>
+    <br>
+    <br>
+    <li>
+      <%= link_to 'Homes', top_path %>
+    </li>
     <% if user_signed_in? %>
-    <br>
-    <br>
-    
-  
       <li>
       <%= link_to '投稿フォーム', new_book_path %>
       </li>
@@ -34,8 +35,7 @@
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
     <% else %>
-    <br>
-    <br>
+
       <li>
       <%= link_to 'about', about_path %>
       </li>
