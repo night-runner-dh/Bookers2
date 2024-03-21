@@ -3,9 +3,10 @@
   <p>説明：<%= @book.body %></p>
   <p>ユーザーネーム：<%= @book.user.name %></p>
   <p>投稿日：<%= @book.created_at.strftime('%Y/%m/%d') %></p>
-   <spam> <%=link_to '変更前(仮)', book_path(@book) %></span>
-     <%= link_to "Edit", edit_book_path(@book) %>
+   <spam> <%=link_to '変更前(仮)', user_path(@book.user_id) %></span>
+    
     <% if @book.user == current_user %>
+      <%= link_to "Edit", edit_book_path(@book) %>
       <%= link_to "Destroy", book_path(@book), method: :delete %>
     <% end %>
     

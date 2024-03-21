@@ -14,6 +14,12 @@
     <%= f.submit 'Update Book' %>
   </div>
   
+  <div>
+    <span class="book-show"><%= link_to "show", book_path(@book) %></span>
+    <span> | </span>
+    <span class="book-show"><%= link_to "back", books_path %></span>
+  </div>
+  
   <% end %>
   
   
