@@ -26,7 +26,7 @@
                 <a class="btn btn-sm btn-success " href="/books/<%= @book.id %>/edit">edit</a>
              <tb>
              <tb>
-              <a class="btn btn-sm btn-danger destroy_book_126349" rel="nofollow" data-method="delete" href="/books/<%= @book.id %>">Destroy</a>
+                <a class="btn btn-sm btn-danger destroy_book_126349" rel="nofollow" data-method="delete" data-confirm="本当に削除しますか？" href="/books/<%= @book.id %>">Destroy</a>
              </tb>
              <% end %>
          </tr>
