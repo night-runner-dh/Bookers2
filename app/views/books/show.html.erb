@@ -24,10 +24,10 @@
              <% if @book.user == current_user %>
              <td>
                 <a class="btn btn-sm btn-success " href="/books/<%= @book.id %>/edit">edit</a>
-             <tb>
-             <tb>
+             <td>
+             <td>
                 <a class="btn btn-sm btn-danger destroy_book_126349" rel="nofollow" data-method="delete" data-confirm="本当に削除しますか？" href="/books/<%= @book.id %>">Destroy</a>
-             </tb>
+             </td>
              <% end %>
          </tr>
    

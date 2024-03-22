@@ -1,5 +1,13 @@
 <h2>User info</h2>
 <%= form_with model: @user do |f| %>
+<% if @user.errors.any? %>
+<%= @user.errors.count %>件のerrorが発生しました
+<ul>
+  <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
   <div>
     <label for="inputName">Name</label>
   </div>
@@ -15,8 +23,8 @@
   <div>
     <label for="inputIntroduction">Introduction</label>
   </div>
-    <%= f.text_area :Introduction, autofocus: true, id:"inputIntroduction", placeholder:"XXX"%>
+    <%= f.text_area :Introduction, autofocus: true, id:"inputIntroduction", placeholder:"Introduction"%>
   <div>
-    <%= f.submit "Update" %>
+    <button type="submit" name="commit" class="btn btn-secondary" data-disable-with="Update User">Update User</button>
  </div>
 <% end %>

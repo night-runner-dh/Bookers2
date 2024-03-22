@@ -27,7 +27,7 @@
           <div class="navbar-collapse collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <li>
-                <%= link_to 'Homes', top_path, class:'nav-link text-light' %>
+                <%= link_to 'Homes',user_path(current_user.id), class:'nav-link text-light' %>
               </li>
               <% if user_signed_in? %>
               <li>
@@ -64,12 +64,36 @@
     </header>
     
     <div class="container px-5 px-sm-0">
+        <% flash.each do |message_type, message| %>
+          <div class="flash-message" style="text-decoration: none;"><%= message %></div>
+        <% end %>
+        
       <div class="row">
         <div class="col-md-3">
-         
+          
+           <h2>User info</h2>
+         <div>
+        <p>ここにユーザー画像を表示したい</p>
+         </div>
+       <table class="table">
+         <tbody>
+           <tr></tr>
+           <tr>
+             <th>name</th>
+           <th>test</th>
+           </tr>
+           <tr>
+             <th>introduction</th>
+           <th></th>
+           </tr>
+         </tbody>
+        </table>
+
+     
+        
           <% if user_signed_in? %> 
-          <% else %>
-          <h1>新規投稿</h1>
+   
+          <h2>New book</h2>
           <%= form_with model: @book,  url: '/books' do |f| %>
             <h4>タイトル</h4>
             <%= f.text_field :title %>
@@ -77,6 +101,7 @@
             <%= f.text_area :body %>
             <%= f.submit '投稿' %>
           <% end %>
+                 <% else %>
           <% end %>
         </div>
         

@@ -9,9 +9,11 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
-      flash[:notice] = "Book was successfully created."
-      redirect_to books_path
+      flash.now[:notice] = "Book was successfully created."
+      @books = Book.all
+      render action: :index
     else
+     
       render :new
     end
   end
@@ -26,7 +28,7 @@ class BooksController < ApplicationController
       is_matching_login_user
       @book = Book.find(params[:id])
     if @book.update(book_params)
-      flash[:notice] = "Book was successfully updated."
+      flash.now[:notice] = "Book was successfully updated."
       redirect_to books_path(@book.id)
     else
       render :edit
