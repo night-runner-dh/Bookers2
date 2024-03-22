@@ -1,12 +1,39 @@
-  <p>投稿ユーザー画像：<%= image_tag @book.user.get_profile_image(100,100) %></p> 
-  <p>名前：<%= @book.title %></p>
-  <p>説明：<%= @book.body %></p>
-  <p>ユーザーネーム：<%= @book.user.name %></p>
-  <p>投稿日：<%= @book.created_at.strftime('%Y/%m/%d') %></p>
-   <spam> <%=link_to '変更前(仮)', user_path(@book.user_id) %></span>
-    
-    <% if @book.user == current_user %>
-      <%= link_to "Edit", edit_book_path(@book) %>
-      <%= link_to "Destroy", book_path(@book), method: :delete %>
-    <% end %>
-    
+ <div class="container"> 
+   <div class="row">
+     <div class="col1-md-3">
+       <h2>Book detail</h2>
+       
+     
+       <table class="table">
+          <thead></thead>
+        <tr>
+        <td>
+          <p><%= image_tag @book.user.get_profile_image(100,100) %></p>
+          <p> <%=link_to @book.user.name, user_path(@book.user_id) %></p>
+        </td>
+        </div>
+        <div class="col-md-8 offset-md-1">
+ 
+        <td>
+        <p><%= link_to @book.title, book_path(@book.id) %></p>
+        </td>
+        <td>
+          <p><%= @book.body %></p>
+        </td>
+         <td>
+             <% if @book.user == current_user %>
+             <td>
+                <a class="btn btn-sm btn-success " href="/books/<%= @book.id %>/edit">edit</a>
+             <tb>
+             <tb>
+              <a class="btn btn-sm btn-danger destroy_book_126349" rel="nofollow" data-method="delete" href="/books/<%= @book.id %>">Destroy</a>
+             </tb>
+             <% end %>
+         </tr>
+   
+         </div>
+        </div>
+      </div>
+  </table>
+  
+
