@@ -30,6 +30,7 @@
          </tbody>
         </table>
             <div>
+                
           <!--下記にhref=""でアドレス追記しないとeditにとべない-->
           <a class="btn btn-outline-secondary btn-block rounded" href="<%= edit_user_path(@user) %>">
             <i class="fas fa-user-cog"></i>
@@ -37,14 +38,7 @@
            </div>
 
 <h2>New book</h2>
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>件のerrorが発生しました
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-  <% end %>
+
 
 <%= form_with model: @book2 do |f| %>
 
@@ -82,7 +76,7 @@
          <td>
              <% if @book.user == current_user %>
              <td>
-                <a class="btn btn-sm btn-success " href="/books/<%= @book.id %>/edit">edit</a>
+                <a class="btn btn-sm btn-success " href="/books/<%= @book.id %>/edit">Edit</a>
              <td>
              <td>
                 <a class="btn btn-sm btn-danger destroy_book_126349" rel="nofollow" data-method="delete" data-confirm="本当に削除しますか？" href="/books/<%= @book.id %>">Destroy</a>

@@ -42,7 +42,7 @@
                 <%= link_to '<i class="fa-solid fa-book-open"></i> Books'.html_safe, books_path, class:'nav-link text-light' %>
               </li>
               <li>
-                <%= link_to '<i class="fa-solid fa-sign-out-alt"></i> Log out'.html_safe, destroy_user_session_path(redirect_to: "/"), method: :delete, class: 'nav-link text-light' %>
+                <%= link_to '<i class="fa-solid fa-sign-out-alt"></i> Log out'.html_safe, destroy_user_session_path(redirect_to: "/home/top"), method: :delete, class: 'nav-link text-light' %>
               </li>
               <% else %>
               
