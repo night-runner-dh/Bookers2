@@ -28,9 +28,9 @@
             <ul class="navbar-nav ml-auto">
              <li>
                <% if user_signed_in? %>
-                  <%= link_to '<i class="fa-solid fa-house"></i>Homes'.html_safe, user_path(current_user.id), class:'nav-link text-light' %>
+                  <%= link_to '<i class="fa-solid fa-house"></i> Homes'.html_safe, user_path(current_user.id), class:'nav-link text-light' %>
                <% else %>
-                  <%= link_to '<i class="fa-solid fa-house"></i>Homes'.html_safe, root_path, class:'nav-link text-light' %>
+                  <%= link_to '<i class="fa-solid fa-house"></i> Homes'.html_safe, root_path, class:'nav-link text-light' %>
                <% end %>
              </li>
               <% if user_signed_in? %>
@@ -38,24 +38,24 @@
                 <%= link_to '投稿フォーム', new_book_path, class:'nav-link text-light' %>
               </li>
               <li>
-                <%= link_to '<i class="fa-solid fa-book-open"></i>Books'.html_safe, books_path, class:'nav-link text-light' %>
+                <%= link_to '<i class="fa-solid fa-book-open"></i> Books'.html_safe, books_path, class:'nav-link text-light' %>
               </li>
               <li>
-                <%= link_to '<i class="fa-solid fa-users"></i>Users'.html_safe, users_path, class:'nav-link text-light' %>
+                <%= link_to '<i class="fa-solid fa-users"></i> Users'.html_safe, users_path, class:'nav-link text-light' %>
               </li>
               <li>
-                <%= link_to '<i class="fa-solid fa-arrow-right-from-bracket"></i> Logout'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+                <%= link_to '<i class="fa-solid fa-arrow-right-from-bracket"></i> Log out'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
               </li>
               <% else %>
               
               <li>
-                <%= link_to 'about', about_path, class:'nav-link text-light' %>
+                <%= link_to '<i class="fa-solid fa-link"></i> about'.html_safe, about_path, class:'nav-link text-light' %>
               </li>
               <li>
-                <%= link_to "新規登録", new_user_registration_path, class:'nav-link text-light' %>
+                <%= link_to '<i class="fa-solid fa-user-plus"></i> sign up'.html_safe, new_user_registration_path, class:'nav-link text-light' %>
               </li>
               <li>
-                <%= link_to "ログイン", new_user_session_path, class:'nav-link text-light' %>
+                <%= link_to '<i class="fa-solid fa-right-to-bracket"></i> Log in'.html_safe, new_user_session_path, class:'nav-link text-light' %>
               </li>
               <% end %>
             </ul>
@@ -81,7 +81,7 @@
            <tr></tr>
            <tr>
              <th>name</th>
-           <th>test</th>
+           <th> user name</th>
            </tr>
            <tr>
              <th>introduction</th>
@@ -89,8 +89,13 @@
            </tr>
          </tbody>
         </table>
-
-     
+        
+        <div>
+          <!--下記にhref=""でアドレス追記しないとeditにとべない-->
+          <a class="btn btn-outline-secondary btn-block " > 
+          <i class="fa-solid fa-user-pen"></i>
+          </a>
+        </div>
         
           <% if user_signed_in? %> 
    
