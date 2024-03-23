@@ -1,4 +1,12 @@
 <div class="container px-5 px-sm-0">
+    <% if @book.errors.any? %>
+  <%= @book.errors.count %>件のerrorが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
   <div class="row">  
     <div class="col-md-3">
       
@@ -24,7 +32,7 @@
             <div>
           <!--下記にhref=""でアドレス追記しないとeditにとべない-->
           <a class="btn btn-outline-secondary btn-block rounded" href="<%= edit_user_path(@user) %>">
-            <i class="fa-solid fa-user-pen"></i>
+            <i class="fas fa-user-cog"></i>
           </a>
            </div>
 
@@ -38,7 +46,7 @@
   </ul>
   <% end %>
 
-<%= form_with model: @book do |f| %>
+<%= form_with model: @book2 do |f| %>
 
   <h4>タイトル</h4>
   <%= f.text_field :title %>
@@ -47,7 +55,7 @@
   <%= f.text_area :body %>
   
 
-  <%= f.submit '投稿' %>
+  <%= f.submit ' Create Book' %>
 
 <% end %>
 

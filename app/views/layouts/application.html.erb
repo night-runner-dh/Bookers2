@@ -42,7 +42,7 @@
                 <%= link_to '<i class="fa-solid fa-book-open"></i> Books'.html_safe, books_path, class:'nav-link text-light' %>
               </li>
               <li>
-                <%= link_to '<i class="fa-solid fa-arrow-right-from-bracket"></i> Log out'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+                <%= link_to '<i class="fa-solid fa-sign-out-alt"></i> Log out'.html_safe, destroy_user_session_path(redirect_to: "/"), method: :delete, class: 'nav-link text-light' %>
               </li>
               <% else %>
               
@@ -61,7 +61,22 @@
         </div>
       </nav>
     </header>
+    <main>
+      <p>
+          <% if flash[:notice] %>
+        <div class="notice">
+          <%= flash[:notice] %>
+        </div>
+         <% end %>
+
+         <% if flash[:alert] %>
+         <div class="alert">
+         <%= flash[:alert] %>
+          </div>
+         <% end %>
+      </p>
         <%= yield %>
+    </main>
     <footer>
       <div class="container mt-5">
         <div class="row">
