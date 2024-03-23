@@ -1,7 +1,11 @@
-
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
       <h5 class="text-dark bg-light py-4 mb-0">Log in</h5>
+      <div class="form-body p-4">
 
-          <p>Name</p>
+        <div class="mx-auto text-center">
+          <p>name</p>
            <%= form_with model: @user, url: user_session_path, local: true do |f| %>
           <div class="input-group mb-3">
             <!-- ここからを追加 -->
@@ -11,15 +15,15 @@
             <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "ユーザー名" %>
             <!-- ここまでを追加 -->
           </div>
-          <div>
-              <p>Password</p>
-          </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-lock"></i></span>
             </div>
             <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputPassword", placeholder:"パスワード" %>
           </div>
-          <%= submit_tag "Log in", name: "commit", class: "btn btn-sm btn-primary", "data-disable-with": "Log in" %>
+    <%= submit_tag "Log in", name: "commit", class: "btn btn-sm btn-primary", "data-disable-with": "Log in" %>
         <% end %>
-    
+      </div>
+    </div>
+  </div>
+</div>
